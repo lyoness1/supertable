@@ -18,7 +18,6 @@ def count(n, c):
 
     # initialize a map to see how many shuffles each card takes to return
     counts_to_return = [0] * n
-
     # initialize a counter
     num_shuffles = 0L
 
@@ -41,7 +40,7 @@ def count(n, c):
         for idx, card in enumerate(new_deck):
             if card == idx and counts_to_return[idx] == 0:
                 counts_to_return[idx] = num_shuffles
-        print counts_to_return
+
         curr_deck = new_deck
 
     # get all num_shuffles for each card from counts_to_return
