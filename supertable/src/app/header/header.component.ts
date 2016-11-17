@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+type Attribute = { name: string, type: string};
 
 export class Section {
-    name: string;,
-    attributes: [];
-    length: number
+    name: string;
+    attributes: Attribute[];
+    length: number;
 }
 
 const SECTIONS: Section[] = [
@@ -36,13 +37,12 @@ const SECTIONS: Section[] = [
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  // @Input() header: Header;
+  // sections: SECTIONS;
+  constructor() { };
 
-  // constructor() { }
+  ngOnInit() { };
 
-  // ngOnInit() {
-  // }
-  componentName: 'HeaderComponent'
-
-  sections: SECTIONS;
+  
     
 }

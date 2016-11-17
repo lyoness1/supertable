@@ -1,3 +1,5 @@
+<div class="ui container">
+
 <h1>
   {{title}}
 </h1>
@@ -6,19 +8,22 @@
 <table>
     <thead>
         <tr>
-            <th colspan="3">Name</th>
-            <th colspan="5">Features</th>
+            <th *ngFor="let section of sections">
+                <tr>
+                    <th colspan="section.length">
+                        {{ section.name }}</th>
+                </tr>
+                <tr>
+                    <th *ngFor="let attr of section.attributes">
+                        {{ attr.name }}</th>
+                </tr>
+            </th>
+                
+
+                
+            
         </tr>
-        <tr>
-            <th>Prefix</th>
-            <th>First</th>
-            <th>Last</th>
-            <th>Gender</th>
-            <th>Height</th>
-            <th>Weight</th>
-            <th>Age</th>
-            <th>Has Nose</th>
-        </tr>
+
     </thead>
 
     <tbody>
@@ -58,3 +63,5 @@
     </tfoot>
     
 </table>
+
+</div>
