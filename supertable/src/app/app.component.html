@@ -10,31 +10,36 @@
         <tr>
             <th *ngFor="let section of sections"
                 attr.colspan="{{section.length}}">
-                {{ section.name }}</th>
-        </tr>
-        <tr>
-            <th *ngFor="let attr of attributes"
-                (click)="onSelect(attr)"
-                [class.selected]="attr === selectedAttr">
-                {{ attr.name }}</th>
+                <table>
+                    <tr>
+                        <td>{{ section.name }}</td>
+                    </tr>
+                    <tr>
+                        <td *ngFor="let attr of section.attributes">
+                            {{ attr.name }}</td>
+                </table>
+            </th>
         </tr>
     </thead>
 
     <tbody>
-        <tr colspan="7"
-            *ngIf="selectedAttr">
-            {{ selectedAttr.name }}</tr>
-        <tr>
-            <td>One</td>
-            <td>Two</td>
-            <td>Three</td>
-            <td>m</td>
-            <td>50</td>
-            <td>200</td>
-            <td>23</td>
-            <td>True</td>
+        <tr *ngFor="let person of people">
+            <td *ngFor="let key of person.name | keys">
+                {{ key.value }}</td>
+            <td *ngFor="let key of person.features | keys">
+                {{ key.value }}</td>
         </tr>
-    </tbody>
+
+        <tr>
+            <td>Thing1</td>
+            <td>Thing 2</td>
+            <td>Thing 3</td>
+            <td>Etc.</td>
+            <td>Avg</td>
+            <td>Avg</td>
+            <td>Sum</td>
+            <td></td>
+        </tr>
 
     <tfoot>
         <tr>
