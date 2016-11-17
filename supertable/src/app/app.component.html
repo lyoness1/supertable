@@ -8,25 +8,22 @@
 <table>
     <thead>
         <tr>
-            <th *ngFor="let section of sections">
-                <tr>
-                    <th colspan="section.length">
-                        {{ section.name }}</th>
-                </tr>
-                <tr>
-                    <th *ngFor="let attr of section.attributes">
-                        {{ attr.name }}</th>
-                </tr>
-            </th>
-                
-
-                
-            
+            <th *ngFor="let section of sections"
+                attr.colspan="{{section.length}}">
+                {{ section.name }}</th>
         </tr>
-
+        <tr>
+            <th *ngFor="let attr of attributes"
+                (click)="onSelect(attr)"
+                [class.selected]="attr === selectedAttr">
+                {{ attr.name }}</th>
+        </tr>
     </thead>
 
     <tbody>
+        <tr colspan="7"
+            *ngIf="selectedAttr">
+            {{ selectedAttr.name }}</tr>
         <tr>
             <td>One</td>
             <td>Two</td>
